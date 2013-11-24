@@ -1,0 +1,833 @@
+﻿<Application x:Class="Demo.Main.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Demo.Main.Contorls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+                <ResourceDictionary Source="Resources/DropdownShadow.xaml" />
+                <ResourceDictionary Source="Resources/DoubleDarkGlassBlue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DrawingBrush x:Key="lightGlassRed">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,40.6667L 0,40.6667L 0,0">
+                        <GeometryDrawing Geometry="F1 M -66.1673,0.249878L 3.83267,0.249878C 6.59412,0.249878 8.83267,2.48843 8.83267,5.24988L 8.83267,35.2498C 8.83267,38.0113 6.59412,40.2498 3.83267,40.2498L -66.1673,40.2498C -68.9287,40.2498 -71.1673,38.0113 -71.1673,35.2498L -71.1673,5.24988C -71.1673,2.48843 -68.9287,0.249878 -66.1673,0.249878 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="0.585524,1.2287" EndPoint="1.98271,1.2287">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <SkewTransform AngleX="-0.851811" AngleY="0" CenterX="0.585524" CenterY="1.2287" />
+                                                    <RotateTransform Angle="-89.7745" CenterX="0.585524" CenterY="1.2287" />
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Offset="0" Color="#FFC21818" />
+                                            <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.586593,1.24691" EndPoint="2.0187,1.24691">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="-0.867889" AngleY="0" CenterX="0.586593" CenterY="1.24691" />
+                                            <RotateTransform Angle="-89.7762" CenterX="0.586593" CenterY="1.24691" />
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#FFC21818" />
+                                    <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FFD24242" Geometry="F1 M -67.6675,23.0944L 6.33261,23.0944C 7.43716,23.0944 8.33261,23.9898 8.33261,25.0944L 8.33261,37.0945C 8.33261,38.199 7.43716,39.0944 6.33261,39.0944L -67.6675,39.0944C -68.7721,39.0944 -69.6675,38.199 -69.6675,37.0945L -69.6675,25.0944C -69.6675,23.9898 -68.7721,23.0944 -67.6675,23.0944 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="BrightGlassBlue">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,40L 0,40L 0,0">
+                        <GeometryDrawing Geometry="F1 M -66.0006,0.416557L 3.99936,0.416557C 6.76077,0.416557 8.99936,2.65511 8.99936,5.41656L 8.99936,35.4166C 8.99936,38.178 6.76077,40.4166 3.99936,40.4166L -66.0006,40.4166C -68.7621,40.4166 -71.0006,38.178 -71.0006,35.4166L -71.0006,5.41656C -71.0006,2.65511 -68.7621,0.416557 -66.0006,0.416557 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="0.585524,1.2287" EndPoint="1.98271,1.2287">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <SkewTransform AngleX="-0.8519" AngleY="0" CenterX="0.585524" CenterY="1.2287" />
+                                                    <RotateTransform Angle="-89.7745" CenterX="0.585524" CenterY="1.2287" />
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Offset="0" Color="#FF4DA0F6" />
+                                            <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.586593,1.24691" EndPoint="2.0187,1.24691">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="-0.867964" AngleY="0" CenterX="0.586593" CenterY="1.24691" />
+                                            <RotateTransform Angle="-89.7771" CenterX="0.586593" CenterY="1.24691" />
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#FF1984F3" />
+                                    <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF489DF5" Geometry="F1 M -67.5008,23.2609L 6.49918,23.2609C 7.60376,23.2609 8.49918,24.1564 8.49918,25.2609L 8.49918,37.2609C 8.49918,38.3655 7.60376,39.2609 6.49918,39.2609L -67.5008,39.2609C -68.6054,39.2609 -69.5008,38.3655 -69.5008,37.2609L -69.5008,25.2609C -69.5008,24.1564 -68.6054,23.2609 -67.5008,23.2609 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <LinearGradientBrush x:Key="LightRedBrush" StartPoint="0.586593,1.24691" EndPoint="2.0187,1.24691">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <SkewTransform AngleX="-0.867889" AngleY="0" CenterX="0.586593" CenterY="1.24691" />
+                        <RotateTransform Angle="-89.7762" CenterX="0.586593" CenterY="1.24691" />
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Offset="0" Color="#FFC21818" />
+                <GradientStop Offset="1" Color="#FFFFFFFF" />
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="DarkRedBrush" Color="#FFD24242" />
+            <DrawingBrush x:Key="DarkGlassRedBrush">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,40.25L 0,40.25L 0,0">
+                        <GeometryDrawing Geometry="F1 M -45.6249,0.500015L 24.375,0.500015C 27.1365,0.500015 29.3751,2.73857 29.3751,5.50002L 29.3751,35.5C 29.3751,38.2615 27.1365,40.5 24.375,40.5L -45.6249,40.5C -48.3864,40.5 -50.6249,38.2615 -50.6249,35.5L -50.6249,5.50002C -50.6249,2.73857 -48.3864,0.500015 -45.6249,0.500015 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="0.464505,0.756098" EndPoint="1.26338,0.756098">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <SkewTransform AngleX="-2.56666" AngleY="0" CenterX="0.464505" CenterY="0.756098" />
+                                                    <RotateTransform Angle="-89.1144" CenterX="0.464505" CenterY="0.756098" />
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Offset="0.00471698" Color="#FF80210C" />
+                                            <GradientStop Offset="0.478885" Color="#FFAF6250" />
+                                            <GradientStop Offset="1" Color="#FFDEA395" />
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.464062,0.762501" EndPoint="1.28291,0.762501">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="-2.61997" AngleY="0" CenterX="0.464062" CenterY="0.762501" />
+                                            <RotateTransform Angle="-89.1253" CenterX="0.464062" CenterY="0.762501" />
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0.00471698" Color="#FF80210C" />
+                                    <GradientStop Offset="0.478885" Color="#FFAF6250" />
+                                    <GradientStop Offset="1" Color="#FFDEA395" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF8B0D00" Geometry="F1 M -44.6253,23.5945L 23.875,23.5945C 26.6364,23.5945 28.875,25.8331 28.875,28.5945L 28.875,34.5945C 28.875,37.3559 26.6364,39.5945 23.875,39.5945L -44.6253,39.5945C -47.3867,39.5945 -49.6253,37.3559 -49.6253,34.5945L -49.6253,28.5945C -49.6253,25.8331 -47.3867,23.5945 -44.6253,23.5945 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="GlassGrayBlue">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,37.9585L 0,37.9585L 0,0">
+                        <GeometryDrawing Brush="#FFBFCDD4" Geometry="M -24.5,6.10352e-005L 31.4584,6.10352e-005C 32.563,6.10352e-005 33.4584,0.895508 33.4584,2.00006L 33.4584,36.7083C 33.4584,37.8129 32.563,38.7083 31.4584,38.7083L -24.5,38.7083C -25.6046,38.7083 -26.5,37.8129 -26.5,36.7083L -26.5,2.00006C -26.5,0.895508 -25.6046,6.10352e-005 -24.5,6.10352e-005 Z " />
+                        <GeometryDrawing Brush="#FFAABBC4" Geometry="M -26.1665,21.9586L 33.1667,21.9586L 33.1667,37.9585L -26.1665,37.9585L -26.1665,21.9586 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <SolidColorBrush x:Key="GrayBorderBrush" Color="#FFA3ABB2" />
+
+            <Style x:Key="WindowsCloseButton" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid Width="{TemplateBinding Width}"
+                                  Height="{TemplateBinding Height}"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Inner" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.995" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed" />
+                                        <VisualState x:Name="Disabled" />
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Unfocused" />
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Inner" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.8" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <controls:DropdownShadow x:Name="dropdownShadow"
+                                                         BottomMiddleBrush="{DynamicResource LightGlassRed__bm}"
+                                                         BottomOffset="10"
+                                                         BottomRightBrush="{DynamicResource LightGlassRed__br}"
+                                                         LeftBottomBrush="{DynamicResource LightGlassRed__bl}"
+                                                         LeftMiddleBrush="{DynamicResource LightGlassRed__lm}"
+                                                         LeftOffset="10"
+                                                         RightMiddleBrush="{DynamicResource LightGlassRed__rm}"
+                                                         RightOffset="10"
+                                                         RoundMargin="-5"
+                                                         TopLeftBrush="{DynamicResource LightGlassRed__tl}"
+                                                         TopMiddleBrush="{DynamicResource LightGlassRed__tm}"
+                                                         TopOffset="10"
+                                                         TopRightBrush="{DynamicResource LightGlassRed__tr}"
+                                                         Visibility="Collapsed" />
+                                <Border x:Name="Outer"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="0,0,3,0" />
+                                <Border x:Name="Inner"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="White"
+                                        BorderThickness="0.5"
+                                        CornerRadius="0,0,3,0">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      RecognizesAccessKey="True"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True" />
+                                <Trigger Property="IsDefaulted" Value="True" />
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="dropdownShadow" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True" />
+                                <Trigger Property="IsEnabled" Value="False" />
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background" Value="{DynamicResource DarkGlassRedBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource GrayBorderBrush}" />
+                <Setter Property="BorderThickness" Value="0,0,1,1" />
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource lightGlassRed}" />
+                        <Setter Property="BorderBrush" Value="#FFD4D4E0" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="Background" Value="{DynamicResource DarkGlassRedBrush}" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource lightGlassRed}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <DrawingBrush x:Key="DarkGlassBlueBrush">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,40.25L 0,40.25L 0,0">
+                        <GeometryDrawing Geometry="M -39.6249,0.125023L 30.375,0.125023C 33.1365,0.125023 35.3751,2.36358 35.3751,5.12502L 35.3751,35.125C 35.3751,37.8865 33.1365,40.125 30.375,40.125L -39.6249,40.125C -42.3864,40.125 -44.6249,37.8865 -44.6249,35.125L -44.6249,5.12502C -44.6249,2.36358 -42.3864,0.125023 -39.6249,0.125023 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="0.483024,1.14329" EndPoint="0.483024,-0.137195">
+                                            <GradientStop Offset="0" Color="#FF0189CA" />
+                                            <GradientStop Offset="0.377358" Color="#FF80C4E4" />
+                                            <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.482812,1.15937" EndPoint="0.482812,-0.153125">
+                                    <GradientStop Offset="0" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.518868" Color="#FF7FBDDA" />
+                                    <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF42A5D4" Geometry="F1 M -38.1253,24.25L 30.3749,24.25C 33.1364,24.25 35.3749,26.4886 35.3749,29.25L 35.3749,35.25C 35.3749,38.0115 33.1364,40.25 30.3749,40.25L -38.1253,40.25C -40.8867,40.25 -43.1253,38.0115 -43.1253,35.25L -43.1253,29.25C -43.1253,26.4886 -40.8867,24.25 -38.1253,24.25 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassBlueBrush" Stretch="Fill">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,40.25L 0,40.25L 0,0">
+                        <GeometryDrawing Geometry="M -48.1249,0.250015L 21.875,0.250015C 24.6365,0.250015 26.8751,2.48857 26.8751,5.25002L 26.8751,35.25C 26.8751,38.0115 24.6365,40.25 21.875,40.25L -48.1249,40.25C -50.8864,40.25 -53.1249,38.0115 -53.1249,35.25L -53.1249,5.25002C -53.1249,2.48857 -50.8864,0.250015 -48.1249,0.250015 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="0.390431,1.07927" EndPoint="1.56123,1.07927">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <SkewTransform AngleX="-1.75263" AngleY="0" CenterX="0.390431" CenterY="1.07927" />
+                                                    <RotateTransform Angle="-89.3957" CenterX="0.390431" CenterY="1.07927" />
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Offset="0" Color="#FF59CBFD" />
+                                            <GradientStop Offset="0.528846" Color="#FFACE5FE" />
+                                            <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.389062,1.09375" EndPoint="1.58913,1.09375">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="-1.78906" AngleY="0" CenterX="0.389062" CenterY="1.09375" />
+                                            <RotateTransform Angle="-89.4032" CenterX="0.389062" CenterY="1.09375" />
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#FF59CBFD" />
+                                    <GradientStop Offset="0.528846" Color="#FFACE5FE" />
+                                    <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF79CFF9" Geometry="F1 M -47.8753,24.25L 20.6249,24.25C 23.3864,24.25 25.6249,26.4886 25.6249,29.25L 25.6249,35.25C 25.6249,38.0115 23.3864,40.25 20.6249,40.25L -47.8753,40.25C -50.6367,40.25 -52.8753,38.0115 -52.8753,35.25L -52.8753,29.25C -52.8753,26.4886 -50.6367,24.25 -47.8753,24.25 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <SolidColorBrush x:Key="DarkBlueBrush" Color="#FF51BED2" />
+            <Style x:Key="NormalWindowsButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid Width="{TemplateBinding Width}"
+                                  Height="{TemplateBinding Height}"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top">
+                                <controls:DropdownShadow x:Name="dropdownShadow"
+                                                         BottomMiddleBrush="{DynamicResource lightGlassBlue__bm}"
+                                                         BottomOffset="10"
+                                                         BottomRightBrush="{DynamicResource lightGlassBlue__br}"
+                                                         LeftBottomBrush="{DynamicResource lightGlassBlue__bl}"
+                                                         LeftMiddleBrush="{DynamicResource lightGlassBlue__lm}"
+                                                         LeftOffset="10"
+                                                         RightMiddleBrush="{DynamicResource lightGlassBlue__rm}"
+                                                         RightOffset="10"
+                                                         RoundMargin="-4"
+                                                         TopLeftBrush="{DynamicResource lightGlassBlue__tl}"
+                                                         TopMiddleBrush="{DynamicResource lightGlassBlue__tm}"
+                                                         TopOffset="10"
+                                                         TopRightBrush="{DynamicResource lightGlassBlue__tr}"
+                                                         Visibility="Collapsed" />
+                                <Border x:Name="Outer"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="0" />
+                                <Border x:Name="Background"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="White"
+                                        BorderThickness="0.5"
+                                        CornerRadius="0"
+                                        Opacity="{TemplateBinding Opacity}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      RecognizesAccessKey="True"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True" />
+                                <Trigger Property="IsDefaulted" Value="True" />
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="dropdownShadow" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True" />
+                                <Trigger Property="IsEnabled" Value="False" />
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderThickness" Value="1,0,1,1" />
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True" />
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource DarkGlassBlueBrush}" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="Background" Value="{x:Null}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="MimimumWindowsButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid Width="{TemplateBinding Width}"
+                                  Height="{TemplateBinding Height}"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top">
+                                <controls:DropdownShadow x:Name="dropdownShadow"
+                                                         BottomMiddleBrush="{DynamicResource lightGlassBlue__bm}"
+                                                         BottomOffset="10"
+                                                         BottomRightBrush="{DynamicResource lightGlassBlue__br}"
+                                                         LeftBottomBrush="{DynamicResource lightGlassBlue__bl}"
+                                                         LeftMiddleBrush="{DynamicResource lightGlassBlue__lm}"
+                                                         LeftOffset="10"
+                                                         RightMiddleBrush="{DynamicResource lightGlassBlue__rm}"
+                                                         RightOffset="10"
+                                                         RoundMargin="-4"
+                                                         TopLeftBrush="{DynamicResource lightGlassBlue__tl}"
+                                                         TopMiddleBrush="{DynamicResource lightGlassBlue__tm}"
+                                                         TopOffset="10"
+                                                         TopRightBrush="{DynamicResource lightGlassBlue__tr}"
+                                                         Visibility="Collapsed" />
+                                <Border x:Name="Outer"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="0,0,0,3" />
+                                <Border x:Name="Inner"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="White"
+                                        BorderThickness="0.5"
+                                        CornerRadius="0,0,0,3"
+                                        Opacity="{TemplateBinding Opacity}">
+                                    <ContentPresenter Margin="0,0,0,5.31"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      RecognizesAccessKey="True"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True" />
+                                <Trigger Property="IsDefaulted" Value="True" />
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="dropdownShadow" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True" />
+                                <Trigger Property="IsEnabled" Value="False" />
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderThickness" Value="1,0,0,1" />
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True" />
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource DarkGlassBlueBrush}" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="Background" Value="{x:Null}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="BlackDropdownStyle" TargetType="{x:Type controls:DropdownShadow}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type controls:DropdownShadow}">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Padding="{TemplateBinding Padding}"
+                                    SnapsToDevicePixels="True">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BottomMiddleBrush" Value="{DynamicResource bm}" />
+                <Setter Property="BottomRightBrush" Value="{DynamicResource br}" />
+                <Setter Property="LeftBottomBrush" Value="{DynamicResource bl}" />
+                <Setter Property="LeftMiddleBrush" Value="{DynamicResource lm}" />
+                <Setter Property="RightMiddleBrush" Value="{DynamicResource rm}" />
+                <Setter Property="TopLeftBrush" Value="{DynamicResource tl}" />
+                <Setter Property="TopMiddleBrush" Value="{DynamicResource tm}" />
+                <Setter Property="TopRightBrush" Value="{DynamicResource tr}" />
+            </Style>
+            <DrawingBrush x:Key="lightGlassBlue__br">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,33L 0,33L 0,0">
+                        <GeometryDrawing Geometry="M -0.125,-33.25C 19.4121,-33.25 35.2499,-18.4195 35.2499,-0.125031C 35.2499,18.1694 19.4121,33 -0.125,33C -19.662,33 -35.4999,18.1694 -35.4999,-0.125031C -35.4999,-18.4195 -19.662,-33.25 -0.125,-33.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__lm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35.5,0L 35.5,1L 0,1L 0,0">
+                        <GeometryDrawing Geometry="M 35.375,-32.25C 54.9121,-32.25 70.7499,-17.4195 70.7499,0.874969C 70.7499,19.1694 54.9121,34 35.375,34C 15.838,34 0.00012207,19.1694 0.00012207,0.874969C 0.00012207,-17.4195 15.838,-32.25 35.375,-32.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__rm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,1L 0,1L 0,0">
+                        <GeometryDrawing Geometry="M -0.125,-32.75C 19.4121,-32.75 35.2499,-17.9195 35.2499,0.374969C 35.2499,18.6694 19.4121,33.5 -0.125,33.5C -19.662,33.5 -35.4999,18.6694 -35.4999,0.374969C -35.4999,-17.9195 -19.662,-32.75 -0.125,-32.75 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__tl">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35.5,0L 35.5,33.25L 0,33.25L 0,0">
+                        <GeometryDrawing Geometry="M 35.375,-3.05176e-005C 54.9121,-3.05176e-005 70.7499,14.8305 70.7499,33.125C 70.7499,51.4194 54.9121,66.25 35.375,66.25C 15.838,66.25 0.00012207,51.4194 0.00012207,33.125C 0.00012207,14.8305 15.838,-3.05176e-005 35.375,-3.05176e-005 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__tm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,33.25L 0,33.25L 0,0">
+                        <GeometryDrawing Geometry="M 0.375,-3.05176e-005C 19.9121,-3.05176e-005 35.7499,14.8305 35.7499,33.125C 35.7499,51.4194 19.9121,66.25 0.375,66.25C -19.162,66.25 -34.9999,51.4194 -34.9999,33.125C -34.9999,14.8305 -19.162,-3.05176e-005 0.375,-3.05176e-005 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__tr">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,33.25L 0,33.25L 0,0">
+                        <GeometryDrawing Geometry="M -0.125,-3.05176e-005C 19.4121,-3.05176e-005 35.2499,14.8305 35.2499,33.125C 35.2499,51.4194 19.4121,66.25 -0.125,66.25C -19.662,66.25 -35.4999,51.4194 -35.4999,33.125C -35.4999,14.8305 -19.662,-3.05176e-005 -0.125,-3.05176e-005 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__bl">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 36.25,0L 36.25,32.5L 0,32.5L 0,0">
+                        <GeometryDrawing Geometry="M 36.25,-33.75C 55.7871,-33.75 71.6249,-18.9194 71.6249,-0.624985C 71.6249,17.6695 55.7871,32.5 36.25,32.5C 16.713,32.5 0.875122,17.6695 0.875122,-0.624985C 0.875122,-18.9194 16.713,-33.75 36.25,-33.75 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__bm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,32.5L 0,32.5L 0,0">
+                        <GeometryDrawing Geometry="M 0.5,-33.75C 20.0371,-33.75 35.8749,-18.9194 35.8749,-0.624985C 35.8749,17.6695 20.0371,32.5 0.5,32.5C -19.037,32.5 -34.8749,17.6695 -34.8749,-0.624985C -34.8749,-18.9194 -19.037,-33.75 0.5,-33.75 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__br">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,32.5L 0,32.5L 0,0">
+                        <GeometryDrawing Geometry="M 0,-33.75C 19.5371,-33.75 35.3749,-18.9194 35.3749,-0.624985C 35.3749,17.6695 19.5371,32.5 0,32.5C -19.537,32.5 -35.3749,17.6695 -35.3749,-0.624985C -35.3749,-18.9194 -19.537,-33.75 0,-33.75 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__lm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35.75,0L 35.75,1L 0,1L 0,0">
+                        <GeometryDrawing Geometry="M 36.25,-33.25C 55.7871,-33.25 71.6249,-18.4194 71.6249,-0.125C 71.6249,18.1695 55.7871,33 36.25,33C 16.713,33 0.875122,18.1695 0.875122,-0.125C 0.875122,-18.4194 16.713,-33.25 36.25,-33.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__rm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,1L 0,1L 0,0">
+                        <GeometryDrawing Geometry="M 0,-33.25C 19.5371,-33.25 35.3749,-18.4194 35.3749,-0.125C 35.3749,18.1695 19.5371,33 0,33C -19.537,33 -35.3749,18.1695 -35.3749,-0.125C -35.3749,-18.4194 -19.537,-33.25 0,-33.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__tl">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 36.25,0L 36.25,33.75L 0,33.75L 0,0">
+                        <GeometryDrawing Geometry="M 36.25,0C 55.7871,0 71.6249,14.8306 71.6249,33.125C 71.6249,51.4195 55.7871,66.25 36.25,66.25C 16.713,66.25 0.875122,51.4195 0.875122,33.125C 0.875122,14.8306 16.713,0 36.25,0 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__tm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,33.75L 0,33.75L 0,0">
+                        <GeometryDrawing Geometry="M 0.5,0C 20.0371,0 35.8749,14.8306 35.8749,33.125C 35.8749,51.4195 20.0371,66.25 0.5,66.25C -19.037,66.25 -34.8749,51.4195 -34.8749,33.125C -34.8749,14.8306 -19.037,0 0.5,0 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassRed__tr">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35,0L 35,33.75L 0,33.75L 0,0">
+                        <GeometryDrawing Geometry="M 0,0C 19.5371,0 35.3749,14.8306 35.3749,33.125C 35.3749,51.4195 19.5371,66.25 0,66.25C -19.537,66.25 -35.3749,51.4195 -35.3749,33.125C -35.3749,14.8306 -19.537,0 0,0 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.49452,0.5" GradientOrigin="0.49452,0.5" RadiusX="0.528001" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147605" AngleY="0" CenterX="0.49452" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.49452" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FFA95A48" />
+                                    <GradientStop Offset="0.78934" Color="#80D4ACA3" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__bl" Stretch="Fill">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 35.5,0L 35.5,33L 0,33L 0,0">
+                        <GeometryDrawing Geometry="M 35.375,-33.25C 54.9121,-33.25 70.7499,-18.4195 70.7499,-0.125031C 70.7499,18.1694 54.9121,33 35.375,33C 15.838,33 0.00012207,18.1694 0.00012207,-0.125031C 0.00012207,-18.4195 15.838,-33.25 35.375,-33.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="lightGlassBlue__bm">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,33L 0,33L 0,0">
+                        <GeometryDrawing Geometry="M 0.375,-33.25C 19.9121,-33.25 35.7499,-18.4195 35.7499,-0.125031C 35.7499,18.1694 19.9121,33 0.375,33C -19.162,33 -34.9999,18.1694 -34.9999,-0.125031C -34.9999,-18.4195 -19.162,-33.25 0.375,-33.25 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush Center="0.494521,0.5" GradientOrigin="0.494521,0.5" RadiusX="0.528" RadiusY="0.563832">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="0.147612" AngleY="0" CenterX="0.494521" CenterY="0.5" />
+                                            <RotateTransform Angle="1.19956" CenterX="0.494521" CenterY="0.5" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                                    <GradientStop Offset="0.552885" Color="#FF007BB6" />
+                                    <GradientStop Offset="0.78934" Color="#807FBDDA" />
+                                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+            <DrawingBrush x:Key="LightGlassGreen">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup ClipGeometry="F1 M 0,0L 1,0L 1,43.5L 0,43.5L 0,0">
+                        <GeometryDrawing Geometry="F1 M -41.7501,3.05176e-005L 28.4999,3.05176e-005C 29.6045,3.05176e-005 30.4999,0.895416 30.4999,2.00003L 30.4999,42C 30.4999,43.1046 29.6045,44 28.4999,44L -41.7501,44C -42.8546,44 -43.7501,43.1046 -43.7501,42L -43.7501,2.00003C -43.7501,0.895416 -42.8546,3.05176e-005 -41.7501,3.05176e-005 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.52862,1.19318" EndPoint="1.98323,1.19318">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform AngleX="-0.979884" AngleY="0" CenterX="0.52862" CenterY="1.19318" />
+                                            <RotateTransform Angle="-89.4696" CenterX="0.52862" CenterY="1.19318" />
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#FF21D240" />
+                                    <GradientStop Offset="0.995238" Color="#FFFFFFFF" />
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF1DE23F" Geometry="F1 M -41.7502,26.5L 28.4998,26.5C 29.6043,26.5 30.4998,27.3954 30.4998,28.5L 30.4998,42C 30.4998,43.1046 29.6043,44 28.4998,44L -41.7502,44C -42.8547,44 -43.7502,43.1046 -43.7502,42L -43.7502,28.5C -43.7502,27.3954 -42.8547,26.5 -41.7502,26.5 Z " />
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

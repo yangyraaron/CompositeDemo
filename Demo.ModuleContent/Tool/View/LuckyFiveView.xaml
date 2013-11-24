@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Demo.Content.Tool.LuckyFiveView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Demo.Content.Tool"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:LuckyFiveViewModel x:Key="LuckyFiveViewModelDataSource" d:IsDataSource="True" />
+        <ItemsPanelTemplate x:Key="WrapItemsPanelTemplate">
+            <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+        <Style x:Key="NumberListBoxItemStyle" BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="{x:Type ListBoxItem}">
+        	<Setter Property="Padding" Value="20,20,20,0"/>
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        	<Setter Property="FontSize" Value="16"/>
+        	<Setter Property="Margin" Value="5,0"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding Source={StaticResource LuckyFiveViewModelDataSource}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="0.577*"/>
+        		<ColumnDefinition Width="0.21*"/>
+        		<ColumnDefinition Width="0.213*"/>
+        	</Grid.ColumnDefinitions>
+    		<ListBox x:Name="Numbers" ItemsSource="{Binding Numbers}"
+    			ItemsPanel="{DynamicResource WrapItemsPanelTemplate}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}"/>
+    		<TextBlock x:Name="txtJiou" TextWrapping="Wrap" FontSize="26" Text="{Binding Rate}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    		<TextBlock x:Name="txtTotal" TextWrapping="Wrap" FontSize="26" Text="{Binding Total,ValidatesOnDataErrors=True}" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    	</Grid>
+
+        <ListBox x:Name="FirstRange"
+                 Grid.Row="1"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding FirstSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding FirstSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="SecondRange"
+                 Grid.Row="2"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding SecondSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding SecondSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="ThirdRange"
+                 Grid.Row="3"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding ThirdSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding ThirdSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="FourthRange"
+                 Grid.Row="4"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding FourthSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding FourthSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="FifthRange"
+                 Grid.Row="5"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding FifthSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding FifthSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="SixthRange"
+                 Grid.Row="6"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding SixthSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding SixthSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+        <ListBox x:Name="SeventhRange"
+                 Grid.Row="8"
+                 ItemsPanel="{DynamicResource WrapItemsPanelTemplate}"
+                 ItemsSource="{Binding SeventhSelector.List, Mode=OneWay}"
+                 SelectedItem="{Binding SeventhSelector.SelectedValue, Mode=TwoWay}" ItemContainerStyle="{DynamicResource NumberListBoxItemStyle}" />
+
+    </Grid>
+</UserControl>

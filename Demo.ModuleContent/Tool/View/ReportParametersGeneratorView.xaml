@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Demo.Content.ReportParametersGeneratorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+             xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" >
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+    
+    <DockPanel LastChildFill="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+
+                <Label VerticalAlignment="Center" 
+                       HorizontalAlignment="Right"
+                       Content="Report File Name:" />
+                <input:AutoCompleteBox Name="acReport"
+                                   Grid.Column="1"
+                                       MinWidth="200"
+                                       Margin="5 0 5 0"
+                                   HorizontalAlignment="Left"
+                                   MinimumPopulateDelay="0"
+                                   MinimumPrefixLength="1"
+                                   IsTextCompletionEnabled="False"
+                                   ItemsSource="{Binding Path=Reports}"
+                                    ValueMemberBinding="{Binding Path=Name}"
+                                    TextBoxStyle="{DynamicResource {x:Type TextBox}}"
+                                   FilterMode="Contains">
+                    <input:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}">
+                            </TextBlock>
+                        </DataTemplate>
+                    </input:AutoCompleteBox.ItemTemplate>
+                    <input:AutoCompleteBox.SelectedItem>
+                        <Binding Path="Report" Mode="TwoWay" />
+                    </input:AutoCompleteBox.SelectedItem>
+                </input:AutoCompleteBox>
+
+                <Button Content="Generator"
+                        Padding="10 0 10 0"
+                        Click="Button_Click"
+                        Command="{Binding Path=GenerateCommand}"/>
+
+                <Button Content="Copy" Margin="5 0" Command="Copy"  CommandTarget="{Binding ElementName=txtContent}" Padding="10 0 10 0" />
+                
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <TextBox  Margin="0 5 0 0" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="txtContent" Text="{Binding Path=ParametersContent}" />
+                <extToolkit:BusyIndicator IsBusy="{Binding Path=IsGenerating}"
+                                          BusyContent="Generating ..."
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+    </DockPanel>
+</UserControl>

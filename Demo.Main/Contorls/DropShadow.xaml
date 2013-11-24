@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Demo.Main.Contorls.DropdownShadow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Demo.Main.Contorls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="287"
+             d:DesignWidth="331"
+             mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" SnapsToDevicePixels="True">
+        <Grid Margin="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:DropdownShadow}}, Path=RoundMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:DropdownShadow}}, Path=TopOffset}" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:DropdownShadow}}, Path=BottomOffset}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:DropdownShadow}}, Path=LeftOffset}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:DropdownShadow}}, Path=RightOffset}" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=LeftOffset}"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=TopOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=TopLeftBrush}" />
+            <Rectangle Grid.Column="1"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=TopOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=TopMiddleBrush}" />
+            <Rectangle Grid.Column="2"
+                       Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=RightOffset}"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=TopOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=TopRightBrush}" />
+            <Rectangle Grid.Row="1"
+                       Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=LeftOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=LeftMiddleBrush}" />
+            <Rectangle Grid.Row="1"
+                       Grid.Column="2"
+                       Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=RightOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=RightMiddleBrush}" />
+            <Rectangle Grid.Row="2"
+                       Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=LeftOffset}"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=BottomOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=LeftBottomBrush}" />
+            <Rectangle Grid.Row="2"
+                       Grid.Column="1"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=BottomOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=BottomMiddleBrush}" />
+            <Rectangle Grid.Row="2"
+                       Grid.Column="2"
+                       Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                      AncestorType={x:Type local:DropdownShadow}},
+                                       Path=RightOffset}"
+                       Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                       AncestorType={x:Type local:DropdownShadow}},
+                                        Path=BottomOffset}"
+                       Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                     AncestorType={x:Type local:DropdownShadow}},
+                                      Path=BottomRightBrush}" />
+
+        </Grid>
+
+    </Grid>
+
+
+</UserControl>

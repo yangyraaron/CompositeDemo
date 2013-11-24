@@ -1,0 +1,26 @@
+﻿<ReportDataContract xmlns="clr-namespace:Demo.Content;assembly=Demo.Content" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ReportDataContract.Fields>
+    <scg:List x:TypeArguments="ReportFieldVM" Capacity="4">
+      <ReportFieldVM FieldType="Field" GroupLevel="1" GroupSize="0" OriginalFieldType="x:String" ReportFieldName="ProudctDescription" ReportFieldType="String">
+        <ReportFieldVM.Group>
+          <ReportFieldVM Group="{x:Null}" FieldType="Group" GroupLevel="1" GroupSize="1" OriginalFieldType="x:String" ReportFieldName="Product" ReportFieldType="String" />
+        </ReportFieldVM.Group>
+      </ReportFieldVM>
+      <ReportFieldVM FieldType="Field" GroupLevel="1" GroupSize="0" OriginalFieldType="x:Decimal" ReportFieldName="UnitCost" ReportFieldType="Decimal">
+        <ReportFieldVM.Group>
+          <ReportFieldVM x:Name="__ReferenceID1" FieldType="Group" GroupLevel="1" GroupSize="0" OriginalFieldType="x:String" ReportFieldName="CostCategory" ReportFieldType="String">
+            <ReportFieldVM.Group>
+              <ReportFieldVM Group="{x:Reference __ReferenceID0}" x:Name="__ReferenceID0" FieldType="Group" GroupLevel="1" GroupSize="1" OriginalFieldType="x:String" ReportFieldName="Product" ReportFieldType="String" />
+            </ReportFieldVM.Group>
+          </ReportFieldVM>
+        </ReportFieldVM.Group>
+      </ReportFieldVM>
+    </scg:List>
+  </ReportDataContract.Fields>
+  <ReportDataContract.Groups>
+    <scg:List x:TypeArguments="ReportFieldVM" Capacity="4">
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+    </scg:List>
+  </ReportDataContract.Groups>
+</ReportDataContract>

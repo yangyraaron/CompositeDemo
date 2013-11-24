@@ -1,0 +1,126 @@
+<UserControl x:Class="Demo.Content.Test.DateHeaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="600"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="HeaderText" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+        <Style x:Key="DateHeaderGrid" TargetType="{x:Type DataGrid}">
+            <Setter Property="AutoGenerateColumns" Value="False" />
+            <Setter Property="CanUserAddRows" Value="False" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="True">
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+
+            <DatePicker SelectedDate="{Binding StartDate}" />
+
+            <Button Command="{Binding CreateDayHeaderCommand}" Content="Day Header" />
+
+            <Button Command="{Binding CreateWeekHeaderCommand}" Content="Week Header" />
+
+            <Button Command="{Binding CreateOriginalWeekHeadersCommand}" Content="Original Week Header" />
+
+            <Button Command="{Binding CreateMonthHeaderCommand}" Content="Month Header" />
+
+            <Button Command="{Binding Create4WeekHeaderCommand}" Content="4 Week Header" />
+
+        </StackPanel>
+
+        <DockPanel LastChildFill="True">
+
+            <DockPanel DockPanel.Dock="Top">
+                <!--  Day Headers  -->
+                <DockPanel DockPanel.Dock="Left">
+                    <TextBlock DockPanel.Dock="Top"
+                               Style="{DynamicResource HeaderText}"
+                               Text="Day Header :" />
+                    <DataGrid MaxHeight="150"
+                              DockPanel.Dock="Left"
+                              ItemsSource="{Binding DayHeaders}"
+                              Style="{DynamicResource DateHeaderGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+
+                <!--  Month Header  -->
+                <DockPanel DockPanel.Dock="Left">
+                    <TextBlock DockPanel.Dock="Top"
+                               Style="{DynamicResource HeaderText}"
+                               Text="Month Header :" />
+                    <DataGrid MaxHeight="150"
+                              DockPanel.Dock="Left"
+                              ItemsSource="{Binding MonthHeaders}"
+                              Style="{DynamicResource DateHeaderGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding }" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+
+                <!--  4 Week Header  -->
+                <DockPanel DockPanel.Dock="Left">
+                    <TextBlock DockPanel.Dock="Top"
+                               Style="{DynamicResource HeaderText}"
+                               Text="4 Week Header :" />
+                    <DataGrid MaxHeight="150"
+                              DockPanel.Dock="Left"
+                              ItemsSource="{Binding FourWeekHeaders}"
+                              Style="{DynamicResource DateHeaderGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding }" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </DockPanel>
+
+
+            <!--  Week Header  -->
+            <DockPanel DockPanel.Dock="Left">
+                <TextBlock FontSize="16"
+                           Style="{DynamicResource HeaderText}"
+                           Text="Week Header :" />
+                <DataGrid DockPanel.Dock="Left"
+                          ItemsSource="{Binding WeekHeaders}"
+                          Style="{DynamicResource DateHeaderGrid}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </DockPanel>
+
+            <DockPanel DockPanel.Dock="Left">
+                <TextBlock FontSize="16"
+                           Style="{DynamicResource HeaderText}"
+                           Text="Original Week Header :" />
+
+                <DataGrid DockPanel.Dock="Left"
+                          ItemsSource="{Binding OriginalWeekHeaders}"
+                          Style="{DynamicResource DateHeaderGrid}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+
+        </DockPanel>
+
+
+    </DockPanel>
+</UserControl>

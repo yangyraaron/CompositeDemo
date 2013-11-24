@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+  <Navigation>
+    <Menus>
+      <Menu Id="tool" Name="Tool">
+        <Menu Id="Localization" Name="Localization Manager" Module="Tool" />
+        <Menu Id="ReportParametersGenerator" Name="Report Parameters Generator" Module="Tool" />
+        <Menu Id="ReportDataManagment" Name="Report Data Manager" Module="Tool" />
+        <Menu Id="LuckyFive" Name="Lucky Five" Module="Tool" />
+      </Menu>
+      <Menu Id="test" Name="Test">
+        <Menu Id="ThreadSafe" Name="AutoResetEvent Test" Module="Test" />
+        <Menu Id="Background" Name="BackgroundWorker Test" Module="Test" />
+        <Menu Id="Coroutine" Name="Coroutine" Module="Test" />
+        <Menu Id="TcpClient" Name="Tcp Client" Module="Test" />
+      </Menu>
+    </Menus>
+  </Navigation>
+  <Parameters>
+    <Parameter Name="LocFileFolder" Value="D:\Project\CdcSoftware.ERP\Vlags\CdcSoftware.Erp.Rrs\Rrs.ClientUI\Localization" />
+    <Parameter Name="ReportFileFolder" Value="D:\Project\CdcSoftware.ERP\Vlags\CdcSoftware.Erp.Rrs\Rrs.ReportFiles\Standard" />
+    <Parameter Name="ReportXmlFolder" Value="E:\self test projects\2010\Demos\CompositeDemo\Demo.ModuleContent\ReportDateXml" />
+  </Parameters>
+</Modules>

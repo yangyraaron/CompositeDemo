@@ -1,0 +1,4 @@
+﻿<x:Array Type="dc:ReportFieldVM" xmlns="clr-namespace:System;assembly=mscorlib" xmlns:dc="clr-namespace:Demo.Content;assembly=Demo.Content" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <dc:ReportFieldVM OriginalFieldType="x:String" ReportFieldName="11" ReportFieldType="String" />
+  <dc:ReportFieldVM OriginalFieldType="DateTime" ReportFieldName="JobCloseDate" ReportFieldType="Date" />
+</x:Array>

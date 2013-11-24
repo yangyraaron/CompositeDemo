@@ -1,0 +1,8 @@
+﻿<x:Array Type="dc:ReportFieldVM" xmlns="clr-namespace:System;assembly=mscorlib" xmlns:dc="clr-namespace:Demo.Content;assembly=Demo.Content" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <dc:ReportFieldVM OriginalFieldType="x:String" ReportFieldName="1" ReportFieldType="String" />
+  <dc:ReportFieldVM OriginalFieldType="x:Int32" ReportFieldName="2" ReportFieldType="Integer" />
+  <dc:ReportFieldVM OriginalFieldType="DateTime" ReportFieldName="3" ReportFieldType="Date" />
+  <dc:ReportFieldVM OriginalFieldType="x:Decimal" ReportFieldName="4" ReportFieldType="Decimal" />
+  <dc:ReportFieldVM OriginalFieldType="x:String" ReportFieldName="5" ReportFieldType="String" />
+  <dc:ReportFieldVM OriginalFieldType="x:Decimal" ReportFieldName="6" ReportFieldType="Decimal" />
+</x:Array>

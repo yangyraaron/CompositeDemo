@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Demo.Content.ReportFieldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo.Content"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>-->
+
+            <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+            </Style>
+
+            <sys:Int32 x:Key="visibilityIndex">-1</sys:Int32>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <GroupBox Header="{Binding Path=ReportField.ReportFieldName,Mode=TwoWay}" >
+            <GroupBox.Content>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!--property name-->
+                    <Label Content="Name :"/>
+                    <Label Grid.Column="1" 
+                           HorizontalAlignment="Left"
+                           Content="{Binding ReportField.ReportFieldName}" />
+
+                    <!--property type-->
+                    <Label Grid.Row="1" 
+                           Content="Type :" />
+                    <Label Grid.Row="1" 
+                           HorizontalAlignment="Left"
+                           Grid.Column="1" Content="{Binding ReportField.ReportFieldType}" />
+
+                    <Label Grid.Row="2" 
+                           Content="Group Level :"
+                           Visibility="{Binding ReportField.FieldType, 
+                                    Converter={StaticResource EnumVisibilityConvertercs},
+                                    ConverterParameter={x:Static local:FieldType.Group}}"/>
+                    <Label Grid.Row="2" 
+                           HorizontalAlignment="Left"
+                           Grid.Column="1" Content="{Binding ReportField.GroupLevel}"
+                           Visibility="{Binding ReportField.FieldType, 
+                                    Converter={StaticResource EnumVisibilityConvertercs},
+                                    ConverterParameter={x:Static local:FieldType.Group}}"/>
+
+                    <Label Grid.Row="3" 
+                           Content="Group Size :"
+                           Visibility="{Binding ReportField.FieldType, 
+                                    Converter={StaticResource EnumVisibilityConvertercs},
+                                    ConverterParameter={x:Static local:FieldType.Group}}"/>
+                    <Label Grid.Row="3" 
+                           HorizontalAlignment="Left"
+                           Grid.Column="1" Content="{Binding ReportField.GroupSize}"
+                           Visibility="{Binding ReportField.FieldType, 
+                                    Converter={StaticResource EnumVisibilityConvertercs},
+                                    ConverterParameter={x:Static local:FieldType.Group}}"/>
+                    
+                    <Label Grid.Row="4" 
+                           Content="Group :" />
+                    <Label Grid.Row="4" 
+                           HorizontalAlignment="Left"
+                           Grid.Column="1" Content="{Binding ReportField.Group.ReportFieldName}"
+                          />
+
+                </Grid>
+            </GroupBox.Content>
+        </GroupBox>
+    </Grid>
+
+</UserControl>
