@@ -7,8 +7,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid>
             <Grid.RowDefinitions>
@@ -20,21 +21,39 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Margin="5" Content="Ip" />
-            <TextBox Margin="5" Grid.Column="1" 
+            <Label Margin="2" Content="Ip" />
+            <TextBox Margin="2" Grid.Column="1" 
                      HorizontalAlignment="Left"
                      Text="{Binding Ip}" Width="200" />
-            <Label Margin="5" Grid.Row="1" Content="Port" />
-            <TextBox Margin="5" Width="200"
+            <Label Margin="2" Grid.Row="1" Content="Port" />
+            <TextBox Margin="2" Width="200"
                      HorizontalAlignment="Left"
                      Grid.Row="1" Grid.Column="1" 
                      Text="{Binding Port}"/>
-            <Button Grid.Row="2" Grid.Column="1" 
-                    Width="50" HorizontalAlignment="Left"
-                    Command="{Binding SendCommand}"
-                    Content="Send" />
+            <StackPanel Grid.Row="2" Grid.Column="1"  Orientation="Horizontal">
+                <Button Width="80" HorizontalAlignment="Left"
+                        Margin="2"
+                    Command="{Binding ConnectCommand}"
+                    Content="Connect" />
+                <Button Width="80" HorizontalAlignment="Left"
+                        Margin="2"
+                    Command="{Binding CloseCommand}"
+                    Content="Close" />
+            </StackPanel>
+
         </Grid>
-        <TextBox Grid.Row="1" TextWrapping="Wrap"
-                 Text="{Binding message}"/>
+        <Grid  Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <TextBox Margin="2" TextWrapping="Wrap" Text="{Binding InputMessage}" />
+            <Button Grid.Row="1" Content="Send" Width="80" Margin="5"
+                    HorizontalAlignment="Left"
+                    Command="{Binding SendCommand}" />
+            <TextBox Grid.Row="2" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Response}"/>
+        </Grid>
+        <TextBlock Grid.Row="2" Text="{Binding Log}" TextWrapping="Wrap" />
     </Grid>
 </UserControl>
